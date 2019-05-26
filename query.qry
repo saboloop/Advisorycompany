@@ -1,0 +1,26 @@
+
+/*
+ * Query for advisorycompany, additional query’s can be extended
+ */
+
+query selectAllEmployees {
+    description: "Select all Employee's"
+    statement:
+        SELECT org.advisory.blockchain.Employee
+}
+
+query selectPartnerEmployees {
+    description: "Select all Employee's with rank Partner"
+    statement:
+        SELECT org.advisory.blockchain.Employee
+        WHERE (rank == 5)
+        ORDER BY [servicecenterID ASC]
+}
+
+query ServicecentersTotal {
+    description: "Select all Servicecenters"
+    statement:
+        SELECT org.advisory.blockchain.Servicecenter
+}
+
+
